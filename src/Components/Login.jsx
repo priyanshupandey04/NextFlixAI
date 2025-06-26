@@ -25,7 +25,7 @@ const Login = () => {
   };
 
   return (
-    <div className="relative h-screen bg-slate-500">
+    <div className="relative h-screen ">
       <Header />
       <div className="absolute object-contain w-screen h-full">
         <img
@@ -58,7 +58,7 @@ const Login = () => {
 
           <input
             ref={email}
-            type="email"
+            type="text"
             placeholder="Enter your email"
             className="px-2 m-2 w-72 h-14 bg-[#121211] text-white border-2 border-white font-semibold"
           />

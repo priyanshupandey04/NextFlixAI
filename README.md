@@ -1,7 +1,4 @@
-
-## ✅  README Content for `NextFlixAI`
-
-```md
+````md
 # 🎬 NextFlixAI
 
 Your smart movie companion — powered by GPT and built with React + Vite.  
@@ -11,7 +8,8 @@ Get personalized movie recommendations, validate users with clean signup flows, 
 
 ## 🚀 Features
 
-- 🔐 **Login & Sign Up** with Zod-based form validation  
+- 🔐 **Firebase Authentication** (Google & Email-based login)  
+- ✅ **Zod-based form validation**  
 - 🤖 **GPT-powered** movie recommendation engine (coming soon)  
 - 🎥 **Netflix-inspired UI** using Tailwind CSS  
 - ⚡ Super-fast development with **Vite + React**
@@ -20,9 +18,9 @@ Get personalized movie recommendations, validate users with clean signup flows, 
 
 ## 🛠️ Tech Stack
 
-| Frontend         | Utility & Styling  | Validation    | AI Integration (Planned) |
-|------------------|--------------------|---------------|---------------------------|
-| React + Vite     | Tailwind CSS       | Zod           | OpenAI (GPT)              |
+| Frontend         | Styling & Utility  | Auth & Validation     | AI Integration (Planned) |
+|------------------|--------------------|------------------------|---------------------------|
+| React + Vite     | Tailwind CSS       | Firebase Auth + Zod    | OpenAI (GPT)              |
 
 ---
 
@@ -33,7 +31,7 @@ Get personalized movie recommendations, validate users with clean signup flows, 
 ```bash
 git clone https://github.com/priyanshupandey04/nextflixai.git
 cd nextflixai
-```
+````
 
 ### 2️⃣ Install Dependencies
 
@@ -47,14 +45,33 @@ npm install
 npm run dev
 ```
 
-> Runs the app in development mode.  
-> Open `http://localhost:5173` to view it in the browser.
+> Open `http://localhost:5173` in your browser.
 
 ---
 
-## 🌐 Environment Variables (Coming Soon)
+## 🔐 Firebase Setup
 
-> Add a `.env` file for storing secrets like OpenAI API keys.
+> Firebase is used for authentication and hosting.
+
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Create a project and enable **Authentication**
+3. Choose providers like **Email/Password** or **Google**
+4. Copy the config and create a `.env` file:
+
+```env
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+---
+
+## 🌐 Environment Variables
+
+> Also used for OpenAI API (planned):
 
 ```env
 VITE_OPENAI_API_KEY=your_key_here
@@ -64,12 +81,7 @@ VITE_OPENAI_API_KEY=your_key_here
 
 ## ✅ Todo (MVP Roadmap)
 
-- [x] Login + Sign Up with Zod Validation  
-- [ ] Movie Recommendation UI  
-- [ ] GPT prompt integration (OpenAI API)  
-- [ ] User watch history (optional)  
-- [ ] Search + Filter by genre, rating  
-- [ ] Deploy on Vercel/Netlify
+*
 
 ---
 
@@ -79,14 +91,23 @@ VITE_OPENAI_API_KEY=your_key_here
 nextflixai/
 ├── src/
 │   ├── components/     # Header, Auth, MovieList, etc.
-│   ├── pages/          # Login, Home, Recommendation
-│   ├── utils/          # constants.js, validate.js
+│   ├── pages/          # Login, Home, Browse
+│   ├── utils/          # constants.js, validate.js, firebase.js
 │   └── App.jsx
 ├── public/
+├── .env               # Firebase & API keys
 ├── .gitignore
+├── firebase.json      # Firebase Hosting config
 ├── package.json
 └── README.md
 ```
+
+---
+
+## 📡 Deployment
+
+Hosted on **Firebase Hosting**
+🔗 [https://nextflixai-1.web.app](https://nextflixai-1.web.app)
 
 ---
 
@@ -100,7 +121,7 @@ Made with ❤️ by [Priyanshu pandey](https://github.com/priyanshupandey04)
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
 ```
 
+Let me know if you want a version that includes preview images, badges, or a live demo GIF too. 🎬🚀
+```
