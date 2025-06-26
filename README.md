@@ -92,7 +92,7 @@ nextflixai/
 
 ## 🙌 Author
 
-Made with ❤️ by [Your Name](https://github.com/your-username)
+Made with ❤️ by [Priyanshu pandey](https://github.com/priyanshupandey04)
 
 ---
 
